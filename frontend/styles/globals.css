@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @apply antialiased;
+}
+
+/* Theme tokens (semantic, used by components) */
+:root {
+  /* Default to dark */
+  color-scheme: dark;
+
+  --tg-bg: #070A12;
+
+  --tg-text: rgba(255,255,255,0.92);
+  --tg-muted: rgba(255,255,255,0.64);
+  --tg-muted-2: rgba(255,255,255,0.54);
+  --tg-faint: rgba(255,255,255,0.48);
+
+  --tg-border: rgba(255,255,255,0.12);
+  --tg-border-strong: rgba(255,255,255,0.18);
+
+  --tg-panel: rgba(255,255,255,0.06);
+  --tg-panel-2: rgba(0,0,0,0.22);
+
+  --tg-soft: rgba(255,255,255,0.04);
+
+  --tg-tooltip-bg: rgba(10,12,20,0.92);
+  --tg-tooltip-border: rgba(255,255,255,0.14);
+
+  --tg-grid: rgba(255,255,255,0.12);
+
+  --tg-shadow: 0 12px 40px rgba(0,0,0,0.35);
+
+  /* Accent (premium cyan) */
+  --tg-accent: #5BE7FF;
+  --tg-accent-contrast: #061018;
+}
+
+.light {
+  color-scheme: light;
+
+  --tg-bg: #F6F8FF;
+
+  --tg-text: rgba(11,16,32,0.92);
+  --tg-muted: rgba(11,16,32,0.66);
+  --tg-muted-2: rgba(11,16,32,0.55);
+  --tg-faint: rgba(11,16,32,0.46);
+
+  --tg-border: rgba(10,20,50,0.14);
+  --tg-border-strong: rgba(10,20,50,0.22);
+
+  /* crisp cards on light */
+  --tg-panel: rgba(255,255,255,0.88);
+  --tg-panel-2: rgba(255,255,255,0.72);
+
+  --tg-soft: rgba(10,20,50,0.04);
+
+  --tg-tooltip-bg: rgba(255,255,255,0.96);
+  --tg-tooltip-border: rgba(10,20,50,0.18);
+
+  --tg-grid: rgba(10,20,50,0.10);
+
+  --tg-shadow: 0 14px 46px rgba(12,16,28,0.10);
+
+  /* Accent tuned for light */
+  --tg-accent: #0EA5E9;
+  --tg-accent-contrast: #FFFFFF;
+}
+
+/* Base backgrounds */
+.dark body {
+  background: var(--tg-bg);
+  color: var(--tg-text);
+}
+
+.light body {
+  background: var(--tg-bg);
+  color: var(--tg-text);
+}
+
+/* Subtle enterprise background texture */
+.tg-bg {
+  background-image:
+    radial-gradient(900px circle at 20% 10%, rgba(72,130,255,0.18), transparent 60%),
+    radial-gradient(700px circle at 80% 20%, rgba(110,255,210,0.10), transparent 55%),
+    radial-gradient(800px circle at 60% 90%, rgba(255,120,210,0.08), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,0.02), transparent 30%, rgba(255,255,255,0.02));
+}
+
+.light .tg-bg {
+  background-image:
+    radial-gradient(900px circle at 20% 10%, rgba(72,130,255,0.10), transparent 60%),
+    radial-gradient(700px circle at 80% 20%, rgba(110,255,210,0.06), transparent 55%),
+    radial-gradient(800px circle at 60% 90%, rgba(255,120,210,0.05), transparent 55%),
+    linear-gradient(180deg, rgba(10,20,50,0.025), transparent 30%, rgba(10,20,50,0.02));
+}
+
+.tg-noise::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+}
+
+/* Glass panel */
+.tg-glass {
+  background: var(--tg-panel);
+  border: 1px solid var(--tg-border);
+  box-shadow: var(--tg-shadow);
+  backdrop-filter: blur(14px);
+}
+
+/* Semantic helpers */
+.tg-text { color: var(--tg-text); }
+.tg-muted { color: var(--tg-muted); }
+.tg-faint { color: var(--tg-faint); }
+.tg-border { border-color: var(--tg-border); }
+.tg-border-strong { border-color: var(--tg-border-strong); }
+.tg-panel { background: var(--tg-panel-2); }
+
+/* Premium buttons */
+.tg-btn-primary {
+  background: var(--tg-accent);
+  color: var(--tg-accent-contrast);
+  border: 1px solid color-mix(in srgb, var(--tg-accent) 55%, transparent);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.28);
+}
+.tg-btn-primary:hover { filter: brightness(1.05); }
+.tg-btn-primary:disabled { opacity: 0.65; }
+
+.tg-btn-ghost {
+  background: var(--tg-panel);
+  border: 1px solid var(--tg-border);
+  color: var(--tg-text);
+  backdrop-filter: blur(14px);
+}
+.tg-btn-ghost:hover { background: var(--tg-panel-2); }
+
+/* Soft inner panel (your code uses tg-soft) */
+.tg-soft {
+  background: var(--tg-soft);
+  border: 1px solid var(--tg-border);
+}
+
+/* Chart layout helpers (prevents Recharts -1 sizing) */
+.tg-chart {
+  width: 100%;
+}
+
+.tg-chart-box {
+  height: 260px;
+  min-height: 240px;
+  width: 100%;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .tg-chart-box {
+    height: 280px;
+    min-height: 260px;
+  }
+}
+
+/* Neon glows */
+.glow-low {
+  box-shadow: 0 0 18px rgba(80,255,180,0.35), 0 0 45px rgba(80,255,180,0.18);
+}
+.glow-medium {
+  box-shadow: 0 0 18px rgba(255,200,80,0.35), 0 0 45px rgba(255,200,80,0.18);
+}
+.glow-high {
+  box-shadow: 0 0 18px rgba(255,80,80,0.45), 0 0 55px rgba(255,80,80,0.22);
+}

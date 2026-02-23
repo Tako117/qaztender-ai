@@ -1,0 +1,12 @@
+{
+  "IT_EQUIPMENT": {
+    "Laptop": 390000,
+    "Printer": 120000
+  },
+  "OFFICE_SUPPLIES": {
+    "Paper A4": 1500
+  },
+  "FUEL": {
+    "Diesel fuel": 285
+  }
+}

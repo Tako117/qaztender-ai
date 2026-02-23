@@ -1,0 +1,260 @@
+{
+  "app": {
+    "name": "QazTender AI",
+    "tagline": "Tender risk explained clearly"
+  },
+  "common": {
+    "analyze": "Analyze tender",
+    "analyzing": "Analyzing…",
+    "demo": "Demo data",
+    "real": "Real data",
+    "online": "Online",
+    "offline": "Offline",
+    "whatMeans": "What this means",
+    "advanced": "Advanced details",
+    "theme": "Theme",
+    "language": "Language",
+    "dark": "Dark",
+    "light": "Light",
+    "continue": "Continue",
+    "noAnalysis": "No analysis found. Run “Analyze tender” on Overview first.",
+    "requestFailed": "Request failed. Please try again.",
+    "flagged": "flagged"
+  },
+  "risk": {
+    "label": "Risk:",
+    "score": "Risk score",
+    "levelShort": "Level",
+    "short": "risk",
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High"
+  },
+  "nav": {
+    "overview": "Overview",
+    "specs": "Specifications",
+    "pricing": "Price & Quantity",
+    "history": "Competition history"
+  },
+  "sidebar": {
+    "navigation": "Navigation",
+    "demoNote": "Demo MVP: market baselines and history may be simulated unless connected to real procurement sources."
+  },
+  "errors": {
+    "noAnalysis": "No analysis found. Run “Analyze tender” on Overview first.",
+    "needTender": "Add a tender first (upload/link/text), then click Analyze.",
+    "offline": "Service is offline. Check the backend and try again.",
+    "badResponse": "We received an unexpected response. Try again.",
+    "analyzeFailed": "Analysis failed. Please try again.",
+    "requestFailed": "Request failed. Please try again."
+  },
+  "overview": {
+    "addTender": "Add tender",
+    "addTenderHint": "Upload, paste a link, or paste text. We extract key fields and you can edit before analysis.",
+    "riskTitle": "Risk level",
+    "riskMeaning": "Higher means the tender may limit competition.",
+    "topReasons": "Why risk is high",
+    "noReasons": "No reasons yet. Run analysis.",
+    "advancedHint": "Advanced details show internal signals and charts. You don’t need them to understand the risk.",
+    "driversTitle": "What drives the risk score",
+    "runToSee": "Run analysis to see advanced details.",
+    "runToSeeAdvanced": "Run analysis to see advanced details.",
+    "dataUsed": "Data used / How we calculate",
+    "dataUsedTitle": "Data used / How we calculate",
+    "errors": {
+      "noTender": "Add a tender first (upload/link/text), then click Analyze."
+    },
+    "data": {
+      "marketTitle": "Market prices",
+      "marketText": "In this MVP, market prices may be simulated unless you connect real sources. The “Demo data” badge avoids misleading claims.",
+      "historyTitle": "History patterns",
+      "historyText": "History charts are demo unless you connect real procurement portal data or your own dataset.",
+      "scoreTitle": "Risk score",
+      "scoreText": "We combine signals (pricing, wording, quantity, competition) into a 0–100 score to prioritize human review."
+    }
+  },
+  "reasons": {
+    "priceTitle": "Price looks unusually high",
+    "priceDetail": "Tender price is about {pct}% above typical market for similar items.",
+    "specTitle": "Specifications may be overly restrictive",
+    "specDetail": "We found wording that may point to a specific brand/model or unnecessary constraints.",
+    "qtyTitle": "Quantity looks unusually high",
+    "qtyDetail": "Requested quantity is about {x}× the typical amount for this category.",
+    "compTitle": "Low competition risk",
+    "compDetail": "Only one participant often increases the risk of non-competitive outcomes.",
+    "fallbackTitle": "Why risk is elevated",
+    "priceHigh": {
+      "title": "Price looks unusually high",
+      "detail": "Tender price is about {pct}% above typical market for similar items."
+    },
+    "specsRestrictive": {
+      "title": "Specifications may be overly restrictive",
+      "detail": "We found wording that may point to a specific brand/model or unnecessary constraints."
+    },
+    "quantityHigh": {
+      "title": "Quantity looks unusually high",
+      "detail": "Requested quantity is about {x}× the typical amount for this category."
+    },
+    "lowCompetition": {
+      "title": "Low competition risk",
+      "detail": "Only one participant often increases the risk of non-competitive outcomes."
+    },
+    "fallback": {
+      "title": "Why risk is elevated"
+    }
+  },
+  "pricing": {
+    "title": "Price & quantity",
+    "subtitle": "Clear pricing signals: how far the tender is from typical market + whether quantity looks unusual.",
+    "whatMeans": "What this means",
+    "tipPrice": "If the tender price is far above typical market, it may indicate overpricing or restrictive conditions.",
+    "typical": "Typical market price",
+    "range": "Typical price range (95%)",
+    "rangeHelp": "A range where prices usually fall (roughly 95% of cases).",
+    "aboveMarket": "Above typical market",
+    "flagged": "(flagged)",
+    "qtyTitle": "Quantity check",
+    "tipQty": "Unusually high quantities can inflate budgets or narrow supplier eligibility.",
+    "qtyTypical": "Typical amount",
+    "qtyRatio": "Requested vs typical",
+    "advancedNote": "This MVP uses category heuristics. You can upgrade later using learned baselines from historical tenders.",
+    "marketMeaning": "If the tender price is far above typical market, it may indicate overpricing or restrictive conditions.",
+    "rangeTooltip": "A range where prices usually fall (roughly 95% of cases).",
+    "quantityTitle": "Quantity check",
+    "quantityMeaning": "Unusually high quantities can inflate budgets or narrow supplier eligibility.",
+    "quantityTypical": "Typical amount",
+    "quantityRatio": "Requested vs typical",
+    "quantityAdvanced": "This MVP uses category heuristics. You can upgrade later using learned baselines from historical tenders.",
+    "quantityRequested": "Requested quantity",
+    "monteCarloTitle": "Monte Carlo Simulation",
+    "evidenceTitle": "Market Evidence"
+  },
+  "history": {
+    "title": "Competition history",
+    "subtitle": "Simple indicators for competition risk: few participants and repeated winners over time.",
+    "repeatedTitle": "Repeated winner pattern",
+    "tipRepeated": "If the same supplier wins repeatedly, it can suggest dominance or restricted competition.",
+    "demoNote": "Demo history (replace with real portal data)",
+    "snapshotTitle": "Competition snapshot",
+    "participants": "Participants",
+    "participantsHint": "Fewer participants usually means higher risk of non-competitive outcomes.",
+    "dataUsed": "Data used / How we calculate",
+    "dataTitle": "History data",
+    "dataText": "This is demo data unless you connect a procurement portal dataset or your own historical records.",
+    "improveTitle": "How to improve",
+    "improveText": "Connect real tender history and compute win streaks, market share, and repeated winner probability."
+  },
+  "specs": {
+    "title": "Specifications",
+    "subtitle": "Wording that may limit competition",
+    "evidenceInText": "Evidence in specification",
+    "missingSpec": "Specification text is missing. Analyze a tender first (Overview → Analyze).",
+    "findingsTitle": "Findings",
+    "finding": "Finding",
+    "noneFound": "No risky wording found.",
+    "clickToJump": "Click a finding to jump to the evidence.",
+    "evidenceQuoted": "“{text}”",
+    "evidenceSeeHighlight": "See highlighted evidence",
+    "defaultWhy": "This wording may limit competition or unfairly narrow eligible suppliers.",
+    "noSpecText": "No specification text.",
+    "evidenceTitle": "Evidence",
+    "whatWeSaw": "What we saw",
+    "whyMatters": "Why it matters",
+    "howFix": "Suggested fix",
+    "fix": {
+      "brand": "Use functional requirements instead of a brand/model. Add “or equivalent” if appropriate.",
+      "allowEquivalent": "Allow alternatives (“or equivalent”) and define measurable requirements instead of one exact option.",
+      "delivery": "If possible, widen delivery terms or clearly justify urgency so suppliers aren’t excluded.",
+      "absoluteTerms": "Avoid absolute terms (“only”, “must be exactly…”). Use measurable requirements and allow equivalents.",
+      "general": "Rewrite as measurable functional requirements; avoid unnecessary constraints; allow “or equivalent” where appropriate."
+    }
+  },
+  "factors": {
+    "technical": "Specification wording",
+    "price": "Price signal",
+    "quantity": "Quantity signal",
+    "competition": "Competition signal",
+    "history": "Repeated winner signal",
+    "weight25": "Weight 25%",
+    "weight30": "Weight 30%",
+    "weight20": "Weight 20%",
+    "weight15": "Weight 15%",
+    "weight10": "Weight 10%",
+    "strength": "Signal strength",
+    "impact": "Impact on risk"
+  },
+  "charts": {
+    "compareTitle": "Tender vs typical market",
+    "marketTypical": "Typical market",
+    "tenderPrice": "Tender price",
+    "typicalMarket": "Typical market",
+    "aboveTypical": "Above typical",
+    "spreadTitle": "Typical market price spread",
+    "spreadSubtitle": "Shows how prices usually vary. Wider spread = more uncertainty.",
+    "advancedHidden": "Internal sampling points are hidden by default to keep the UI citizen-friendly.",
+    "noDistribution": "No distribution data available.",
+    "count": "Count",
+    "countShort": "Count",
+    "priceAround": "Price around",
+    "wins": "Wins",
+    "marketVsBidTitle": "Tender vs typical market",
+    "spreadHint": "Shows how prices usually vary. Wider spread = more uncertainty.",
+    "spreadAdvanced": "In demo mode, this distribution is simulated.",
+    "marketMean": "Typical market",
+    "bidPrice": "Tender bid price",
+    "dataSource": "Data",
+    "confidence": "Confidence",
+    "confidenceNA": "N/A"
+  },
+  "intake": {
+    "tabs": {
+      "upload": "Upload",
+      "link": "Link",
+      "text": "Text"
+    },
+    "nextHint": "Next: we will show extracted fields you can edit.",
+    "extracted": {
+      "title": "We extracted",
+      "subtitle": "Check and edit if needed.",
+      "fromLink": "Tender from link",
+      "fromFile": "Tender from file"
+    },
+    "upload": {
+      "title": "Drag & drop a PDF/photo/doc, or click to choose",
+      "note": "MVP note: file extraction is demo-level unless backend OCR/extraction endpoint is connected.",
+      "selected": "Selected:",
+      "remove": "Remove file"
+    },
+    "link": {
+      "title": "Paste a tender page link",
+      "placeholder": "https://…",
+      "note": "MVP note: link scraping is demo-level unless backend scraping/extraction is connected."
+    },
+    "text": {
+      "title": "Paste tender text (best for MVP demo)",
+      "placeholder": "Paste description/specs/items/price here…",
+      "note": "We will auto-extract key fields. You can edit them before analysis."
+    },
+    "defaults": {
+      "untitled": "Untitled tender",
+      "unknown": "Unknown",
+      "item": "Item",
+      "bidder": "Bidder"
+    }
+  },
+  "fields": {
+    "title": "Title",
+    "region": "Region",
+    "currency": "Currency",
+    "category": "Category",
+    "participants": "Participants",
+    "specText": "Specification text",
+    "specPlaceholder": "Specification / requirements…",
+    "itemName": "Item name",
+    "quantity": "Quantity",
+    "unit": "Unit",
+    "bidPrice": "Bid price (unit)",
+    "supplierName": "Supplier name"
+  },
+  "pricing.evidenceTitle": "Evidence"
+}

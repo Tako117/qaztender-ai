@@ -1,0 +1,10 @@
+[
+  { "tender_id": "H-001", "category": "IT_EQUIPMENT", "region": "Shymkent", "supplier_id": "S1", "supplier_name": "TechSupply LLP", "won": true  },
+  { "tender_id": "H-002", "category": "IT_EQUIPMENT", "region": "Shymkent", "supplier_id": "S1", "supplier_name": "TechSupply LLP", "won": true  },
+  { "tender_id": "H-003", "category": "IT_EQUIPMENT", "region": "Shymkent", "supplier_id": "S2", "supplier_name": "DigitalPartner",  "won": true  },
+  { "tender_id": "H-004", "category": "IT_EQUIPMENT", "region": "Shymkent", "supplier_id": "S1", "supplier_name": "TechSupply LLP", "won": true  },
+  { "tender_id": "H-005", "category": "IT_EQUIPMENT", "region": "Shymkent", "supplier_id": "S3", "supplier_name": "CityIT",         "won": true  },
+  { "tender_id": "H-006", "category": "FUEL",        "region": "Shymkent", "supplier_id": "F1", "supplier_name": "FuelTrade",      "won": true  },
+  { "tender_id": "H-007", "category": "FUEL",        "region": "Shymkent", "supplier_id": "F1", "supplier_name": "FuelTrade",      "won": true  },
+  { "tender_id": "H-008", "category": "FUEL",        "region": "Shymkent", "supplier_id": "F2", "supplier_name": "PetroLine",      "won": true  }
+]
