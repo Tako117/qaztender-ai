@@ -1,7 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import AppHeader from "@/components/layout/AppHeader";
-
+import AppHeader from "../components/layout/AppHeader";
 export const metadata: Metadata = {
   title: "QazTender AI",
   description: "AI-powered tender risk intelligence",
