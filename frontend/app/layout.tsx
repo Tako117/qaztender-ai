@@ -1,6 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import AppHeader from "../components/layout/AppHeader";
+import AppProviders from "../components/providers/AppProviders";
+
 export const metadata: Metadata = {
   title: "QazTender AI",
   description: "AI-powered tender risk intelligence",
@@ -17,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100">
-        <AppHeader />
-        <main>{children}</main>
+        <AppProviders>
+          <AppHeader />
+          <main>{children}</main>
+        </AppProviders>
       </body>
     </html>
   );
