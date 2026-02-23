@@ -1,27 +1,25 @@
-import "../styles/globals.css";
+import "./globals.css";
 import type { Metadata } from "next";
-import { AppProviders } from "../components/providers/AppProviders";
-import { AppSidebar } from "../components/shell/AppSidebar";
-import { TopBar } from "../components/shell/TopBar";
+import AppHeader from "@/components/layout/AppHeader";
 
 export const metadata: Metadata = {
   title: "QazTender AI",
-  description: "AI-powered procurement risk detection for Kazakhstan"
+  description: "AI-powered tender risk intelligence",
+  icons: {
+    icon: "/logo_qaztender.jpeg",
+  },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="tg-bg tg-noise min-h-screen">
-        <AppProviders>
-          <div className="flex min-h-screen">
-            <AppSidebar />
-            <div className="flex-1">
-              <TopBar />
-              <main className="px-6 py-6">{children}</main>
-            </div>
-          </div>
-        </AppProviders>
+    <html lang="en">
+      <body className="bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100">
+        <AppHeader />
+        <main>{children}</main>
       </body>
     </html>
   );
