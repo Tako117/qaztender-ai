@@ -1,5 +1,8 @@
 export const API_URL =
-  process.env.NEXT_PUBLIC_API_URL?.trim() || "http://localhost:8000";
+  process.env.NEXT_PUBLIC_API_URL?.trim() ||
+  process.env.NEXT_PUBLIC_API_BASE_URL?.trim() ||
+  process.env.NEXT_PUBLIC_BACKEND_URL?.trim() ||
+  "http://localhost:8000";
 
 export type ApiErrorCode =
   | "TG_ERR_OFFLINE"
@@ -16,7 +19,6 @@ export async function getServiceStatus(): Promise<"online" | "offline"> {
 }
 
 export async function analyzeTender(tender: any) {
-  // Backward compatible structured endpoint
   return postJson(`${API_URL}/analyze`, tender);
 }
 
@@ -26,7 +28,7 @@ async function postJson(url: string, payload: any) {
     res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     });
   } catch {
     throw new Error("TG_ERR_OFFLINE");
@@ -50,7 +52,6 @@ export async function fetchDemo() {
 }
 
 export async function extractDraftFromSource(source: any, meta?: any) {
-  // source: {type: 'text'|'link'|'upload', value: string|File}
   if (!source?.type) throw new Error("TG_ERR_ANALYZE_FAILED");
 
   if (source.type === "text") {
@@ -59,7 +60,7 @@ export async function extractDraftFromSource(source: any, meta?: any) {
       tender_title: meta?.title ?? null,
       category: meta?.category ?? null,
       region: meta?.region ?? null,
-      currency: meta?.currency ?? "KZT"
+      currency: meta?.currency ?? "KZT",
     });
   }
 
@@ -69,13 +70,14 @@ export async function extractDraftFromSource(source: any, meta?: any) {
       tender_title: meta?.title ?? null,
       category: meta?.category ?? null,
       region: meta?.region ?? null,
-      currency: meta?.currency ?? "KZT"
+      currency: meta?.currency ?? "KZT",
     });
   }
 
   if (source.type === "upload") {
     const file: File | null = source.file ?? null;
     if (!file) throw new Error("TG_ERR_ANALYZE_FAILED");
+
     const form = new FormData();
     form.append("file", file);
     if (meta?.title) form.append("tender_title", meta.title);
@@ -101,6 +103,5 @@ export async function extractDraftFromSource(source: any, meta?: any) {
 }
 
 export async function analyzeFromDraft(draft: any) {
-  // Use unified /analyze (structured), since draft.spec_text comes from canonical extraction.
   return analyzeTender(draft);
 }
